@@ -7,8 +7,9 @@
     .product
       %h2= product.name
       %p= product.description
-      %h3
+      %strong
         = product.price
         EUR
-      %p= link_to 'Show more', product
+
+      = link_to 'Show more', product
 
