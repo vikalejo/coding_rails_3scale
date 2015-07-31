@@ -39,5 +39,6 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails', '~> 3.0'
   gem 'faker', '~> 1.4.3'
+  gem 'nokogiri'
 end
 
