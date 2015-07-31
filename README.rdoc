@@ -1,28 +1,19 @@
-== README
+== 3scale coding exercise
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Imagine this is a real production app (I know it's asking a lot). It lists a
+bunch of products, allows us to see its details and provides a link to buy it.
 
-Things you may want to cover:
+Your task is to add a feature that allows a user to switch between showing the
+price in different currencies (only on the details product page). We currently
+show only EUR, we'd like GBP, PHP, and USD as well. We'd like to use the
+exchange rates from published here: https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Your task would be to:
+* get the data about exchange rates
+* provide methods in the model to show price in different currencies
+* adjust the view to add a possibility to switch currencies dynamically (without a page reload)
+* add tests as considered necessary
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Good luck!
+
