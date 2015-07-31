@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%h1 Check out our products!
+
+.row.product-list
+  - @products.each do |product|
+    .product
+      %h2= product.name
+      %p= product.description
+      %h3
+        = product.price
+        EUR
+      %p= link_to 'Show more', product
+

@@ -1,0 +1,10 @@
+.product
+  %h2= @product.name
+
+  %p= @product.description
+
+  %strong
+    = @product.price
+    EUR
+
+= link_to 'Back to product list', products_path
