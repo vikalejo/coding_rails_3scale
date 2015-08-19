@@ -4,16 +4,16 @@ Imagine this is a real production app (I know it's asking a lot). It lists a
 bunch of products, allows us to see its details and provides a link to buy it.
 
 Your task is to add a feature that allows a user to switch between showing the
-price in different currencies (only on the details product page). We currently
+price in different currencies (on all pages). We currently
 show only EUR, we'd like GBP, PHP, and USD as well. We'd like to use the
 exchange rates from published here: https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml
 
 Your task would be to:
 * get the data about exchange rates
 * provide methods in the model to show price in different currencies
-* adjust the view to add a possibility to switch currencies dynamically (without a page reload)
+* adjust the views to add a possibility to switch currencies dynamically (without a page reload)
 * add tests as considered necessary
-
+* implement the footer matching design included in this repository as footer.png
 
 Good luck!
 
