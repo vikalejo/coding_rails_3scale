@@ -31,5 +31,15 @@ module CodingRails3Scale
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Redis cache
+    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 10.minutes }
+
+    %w(services).each do |lib|
+      Dir[root.join('lib', lib, '**', '*')]
+      .reject {|p| File.directory?(p)}.each do |mod|
+        load(mod)
+      end
+    end
   end
 end
