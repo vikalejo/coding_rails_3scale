@@ -1,0 +1,11 @@
+- products.each do |product|
+  %article.product
+    %h2= product.name
+    %p= product.description
+    %strong
+      = product.price
+      = product.currency
+
+      = link_to 'Show more',
+        product_path(id: product.id, currency: product.currency, price: product.price)
+

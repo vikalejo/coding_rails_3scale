@@ -1,13 +1,18 @@
 %h1 Check out our products!
 
 .row.product-list
-  - @products.each do |product|
-    %article.product
-      %h2= product.name
-      %p= product.description
-      %strong
-        = product.price
-        EUR
+  .select-currency
+    %strong Choose currency:
+    = select_tag 'currencies', options_for_select(['EUR', 'GBP','USD','PHP'], selected: cookies[:currency])
 
-      = link_to 'Show more', product
+  #products
+    - @products.each do |product|
+      %article.product
+        %h2= product.name
+        %p= product.description
+        %strong
+          = product.price
+          = product.currency
 
+          = link_to 'Show more',
+            product_path(id: product.id, currency: product.currency, price: product.price)
