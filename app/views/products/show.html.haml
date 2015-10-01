@@ -1,12 +1,11 @@
 %article.product
   %h1= @product.name
-
   %p= @product.description
 
   %strong
-    = @product.price
-    EUR
+    = params[:price]
+    = params[:currency]
 
   = link_to 'Shut up and take my money!', '#'
 
-= link_to 'Back to product list', products_path
+= link_to 'Back to product list', products_path(currency: params[:currency])
