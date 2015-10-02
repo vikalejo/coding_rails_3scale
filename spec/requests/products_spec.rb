@@ -3,11 +3,7 @@ require 'rails_helper'
 RSpec.describe "Products", type: :request do
   describe "GET /products" do
     before do
-      3.times do
-        Product.create! name: Faker::Commerce.product_name,
-          price_in_cents: Faker::Commerce.price * 100,
-          description: Faker::Lorem.paragraph
-      end
+      3.times { create(:product) }
     end
 
     it "lists all products" do
@@ -19,14 +15,14 @@ RSpec.describe "Products", type: :request do
   end
 
   describe "GET /products" do
+    let(:price_in_cents) { 3456 }
+
     before do
-      @product =Product.create! name: Faker::Commerce.product_name,
-        price_in_cents: 3456,
-        description: Faker::Lorem.paragraph
+      @product = create(:product, price_in_cents: price_in_cents)
     end
 
     it "shows product details" do
-      get product_path(@product)
+      get product_path(@product, :currency => 'EUR', :price => price_in_cents / 100.0)
       expect(response).to have_http_status(200)
       price = Nokogiri::HTML(response.body).css('.product strong')
       expect(price.text).to match(/34.56\sEUR/)

@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//
+
+$(function() {
+    var currencies = $("#currencies").change(function() {
+        $.ajax({
+          url: 'products',
+          type: 'GET',
+          data: { currency: $(this).val() },
+          dataType: 'script'
+        })
+    });
+});
+

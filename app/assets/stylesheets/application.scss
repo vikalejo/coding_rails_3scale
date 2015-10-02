@@ -19,6 +19,7 @@
 
 body {
   background-color: #ddd;
+  height: 100%;
 }
 
 .product {
@@ -44,3 +45,38 @@ body {
   font-size: 100%;
 }
 
+footer {
+  font-size: large;
+  width: 100%;
+  padding: 10px;
+  background-color: #3A3232;
+  box-sizing: border-box;
+  vertical-align: middle;
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+  margin-left: -100px;
+}
+
+table {
+  width: 100%;
+}
+
+tr td {
+  color: white;
+  padding: 10px;
+}
+
+.select-currency {
+  text-align: center;
+}
+
+.selector {
+  text-size: 15;
+  color: blue;
+}
+
+.rights {
+  margin: 0px 40px;
+  text-align: center;
+}
