@@ -1,10 +1,6 @@
 %h1 Check out our products!
 
 .row.product-list
-  .select-currency
-    %strong Choose currency:
-    = select_tag 'currencies', options_for_select(['EUR', 'GBP','USD','PHP'], selected: cookies[:currency])
-
   #products
     - @products.each do |product|
       %article.product

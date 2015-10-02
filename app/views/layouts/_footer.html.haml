@@ -1,0 +1,10 @@
+%footer
+  %table
+    %tr
+      %td
+        .rights
+          © Victor Alejo
+      %td
+        .select-currency
+          Choose currency:
+          = select_tag 'currencies', options_for_select(['EUR', 'GBP','USD','PHP'], selected: cookies[:currency]), {:class => 'selector'}
